@@ -62,7 +62,7 @@ in [`relay/CONTRACT.md`](relay/CONTRACT.md).
 | macOS agent | Implemented and verified end to end over the tailnet |
 | Windows agent | Implemented; 52 tests and live receive-to-clipboard verification |
 | iOS sender | Builds for simulator and device; physical-device validation pending |
-| Android client | Foreground send/receive and share target; physical-device tailnet validation pending |
+| Android client | Mac-to-Android copy/paste verified in emulator; physical-device tailnet validation pending |
 | Enrollment UI / iOS receive | Not implemented |
 
 See [`TASKS.md`](TASKS.md) for the detailed implementation record and remaining

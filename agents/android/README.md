@@ -104,8 +104,19 @@ vectors, real Keystore persistence/rekey, a local WebSocket relay fixture, join
 gating, explicit disconnect, and the share activity. Test enrollment uses a
 separate storage namespace and is deleted afterwards.
 
-Physical-device Tailscale enrollment, desktop interoperability, clipboard UX,
-and OEM lifecycle behavior still require a real-device smoke test. First open
+On 2026-09-18, a live smoke test verified the real macOS clipboard watcher →
+Phoenix relay → Android 16 emulator clipboard → paste into an Android text field.
+The pasted text matched exactly, including leading-zero digits, Unicode, spaces,
+and a newline. A negative control with the Mac agent stopped confirmed that
+emulator clipboard sharing did not bypass BatonPass. The test used a separate
+relay port and disposable group key; temporary enrollment and processes were
+removed afterwards. The temporary smoke harness is not part of the checked-in
+instrumentation suite.
+
+The emulator used the Mac's Tailscale connection and identity, so this does not
+verify independent Android Tailscale enrollment. Android-to-Mac live delivery,
+physical-device clipboard UX, and OEM lifecycle behavior still require a
+real-device smoke test. First open
 BatonPass, copy a unique value on desktop, and paste on the phone; then use
 **Send clipboard** and paste on desktop. Background reception is intentionally
 outside this MVP.

@@ -332,6 +332,7 @@ not the deferred T11 fetch path.
 - [x] Receive to clipboard while the activity is focused
 - [x] Existing envelope vectors, Phoenix framing, replay persistence, clock recovery
 - [x] Gradle build, JVM tests, Android instrumentation suite, setup documentation
+- [x] Real Mac clipboard → Phoenix relay → Android emulator clipboard → paste (2026-09-18)
 - [ ] Physical-device Tailscale enrollment and desktop interoperability smoke test
 - [ ] Background receiving (outside the foreground MVP)
 
