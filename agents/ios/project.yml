@@ -1,0 +1,32 @@
+name: BatonPass
+options:
+  bundleIdPrefix: co.subvisual
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+
+packages:
+  BatonPassCore:
+    path: ../../core
+
+targets:
+  BatonPass:
+    type: application
+    platform: iOS
+    sources:
+      - path: BatonPass
+    dependencies:
+      - package: BatonPassCore
+        product: BatonPassCore
+    info:
+      path: BatonPass/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: co.subvisual.batonpass
+        MARKETING_VERSION: "0.1"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: NO
+        # Set by the installer or by hand once an Apple ID is added to Xcode.
+        CODE_SIGN_STYLE: Automatic

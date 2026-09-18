@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BatonPass.Windows.Agent/BatonPass.Windows.Agent.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BatonPass.Windows.Tests/BatonPass.Windows.Tests.csproj" />
+  </Folder>
+</Solution>

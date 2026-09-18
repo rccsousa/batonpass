@@ -1,0 +1,371 @@
+# S5 raw probe transcript — NSPasteboard.general on relay-mac (macOS 26.3, build 25D125)
+# Captured 2026-09-11T13:26:08Z by spikes/s5-universal-clipboard/pbprobe
+# Peer device: iphone-example, same Apple Account (owner@example.com), Handoff/UC active.
+
+pbprobe watching NSPasteboard.general — initial changeCount 289
+
+=== INITIAL ===
+time            : 2026-09-11T13:16:32.203Z
+changeCount     : 289   (delta 0)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 3):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+  [2] org.nspasteboard.source
+pasteboardItems : 1
+  [A types-only] item[0] (2):
+    [0] public.utf8-plain-text
+    [1] org.nspasteboard.source
+changeCount after types-only inspection: 289
+  [B with-data] item[0] (2):
+    [0] public.utf8-plain-text  bytes=23  utf8:batonpass-agent-write-D
+    [1] org.nspasteboard.source  bytes=22  utf8:co.subvisual.batonpass
+changeCount after data reads: 289
+marker probe (explicit reads, independent of the type list):
+    HIT org.nspasteboard.source data=22B utf8:co.subvisual.batonpass string=co.subvisual.batonpass plist=Optional(co.subvisual.batonpass)
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end INITIAL ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:16:33.046Z
+changeCount     : 290   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 2):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+pasteboardItems : 1
+  [A types-only] item[0] (1):
+    [0] public.utf8-plain-text
+changeCount after types-only inspection: 290
+  [B with-data] item[0] (1):
+    [0] public.utf8-plain-text  bytes=22  utf8:baseline-before-iphone
+changeCount after data reads: 290
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:17:38.960Z
+changeCount     : 291   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 4):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+  [2] public.text
+  [3] com.apple.is-remote-clipboard
+pasteboardItems : 1
+  [A types-only] item[0] (3):
+    [0] public.utf8-plain-text
+    [1] public.text
+    [2] com.apple.is-remote-clipboard
+changeCount after types-only inspection: 291
+  [B with-data] item[0] (3):
+    [0] public.utf8-plain-text  bytes=14  utf8:UC-PROBE-ALPHA
+    [1] public.text  bytes=14  utf8:UC-PROBE-ALPHA
+    [2] com.apple.is-remote-clipboard  bytes=0  hex:
+changeCount after data reads: 291
+marker probe (explicit reads, independent of the type list):
+    HIT com.apple.is-remote-clipboard data=0B hex: string= plist=nil
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:17:48.464Z
+changeCount     : 292   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 4):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+  [2] public.text
+  [3] com.apple.is-remote-clipboard
+pasteboardItems : 1
+  [A types-only] item[0] (3):
+    [0] public.utf8-plain-text
+    [1] public.text
+    [2] com.apple.is-remote-clipboard
+changeCount after types-only inspection: 292
+  [B with-data] item[0] (3):
+    [0] public.utf8-plain-text  bytes=14  utf8:UC-PROBE-ALPHA
+    [1] public.text  bytes=14  utf8:UC-PROBE-ALPHA
+    [2] com.apple.is-remote-clipboard  bytes=0  hex:
+changeCount after data reads: 292
+marker probe (explicit reads, independent of the type list):
+    HIT com.apple.is-remote-clipboard data=0B hex: string= plist=nil
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:18:56.021Z
+changeCount     : 293   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 4):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+  [2] public.text
+  [3] com.apple.is-remote-clipboard
+pasteboardItems : 1
+  [A types-only] item[0] (3):
+    [0] public.utf8-plain-text
+    [1] public.text
+    [2] com.apple.is-remote-clipboard
+changeCount after types-only inspection: 293
+  [B with-data] item[0] (3):
+    [0] public.utf8-plain-text  bytes=13  utf8:UC-PROBE-BETA
+    [1] public.text  bytes=13  utf8:UC-PROBE-BETA
+    [2] com.apple.is-remote-clipboard  bytes=0  hex:
+changeCount after data reads: 293
+marker probe (explicit reads, independent of the type list):
+    HIT com.apple.is-remote-clipboard data=0B hex: string= plist=nil
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:19:15.825Z
+changeCount     : 294   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 7):
+  [0] public.html
+  [1] Apple HTML pasteboard type
+  [2] public.utf8-plain-text
+  [3] NSStringPboardType
+  [4] org.chromium.internal.source-rfh-token
+  [5] org.chromium.web-custom-data
+  [6] org.chromium.source-url
+pasteboardItems : 1
+  [A types-only] item[0] (5):
+    [0] public.html
+    [1] public.utf8-plain-text
+    [2] org.chromium.internal.source-rfh-token
+    [3] org.chromium.web-custom-data
+    [4] org.chromium.source-url
+changeCount after types-only inspection: 294
+  [B with-data] item[0] (5):
+    [0] public.html  bytes=57  utf8:<meta charset='utf-8'><!-- obsidian --><p>random-text</p>
+    [1] public.utf8-plain-text  bytes=11  utf8:random-text
+    [2] org.chromium.internal.source-rfh-token  bytes=24  hex:14000000040000005c867fa8a0c01a3d317a76f8f4000d6b
+    [3] org.chromium.web-custom-data  bytes=68  hex:40000000010000000d00000074006500780074002f006d00610072006b0064006f0077006e0000000b000000720061006e0064006f006d002d0074006500780074000000
+    [4] org.chromium.source-url  bytes=28  utf8:app://obsidian.md/index.html
+changeCount after data reads: 294
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:19:43.713Z
+changeCount     : 295   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 2):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+pasteboardItems : 1
+  [A types-only] item[0] (1):
+    [0] public.utf8-plain-text
+changeCount after types-only inspection: 295
+  [B with-data] item[0] (1):
+    [0] public.utf8-plain-text  bytes=15  utf8:LOCALONLY-GAMMA
+changeCount after data reads: 295
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:21:13.379Z
+changeCount     : 296   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 2):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+pasteboardItems : 1
+  [A types-only] item[0] (1):
+    [0] public.utf8-plain-text
+changeCount after types-only inspection: 296
+  [B with-data] item[0] (1):
+    [0] public.utf8-plain-text  bytes=19  utf8:s4-local-only-probe
+changeCount after data reads: 296
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:21:55.528Z
+changeCount     : 297   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 7):
+  [0] public.html
+  [1] Apple HTML pasteboard type
+  [2] public.utf8-plain-text
+  [3] NSStringPboardType
+  [4] org.chromium.internal.source-rfh-token
+  [5] org.chromium.web-custom-data
+  [6] org.chromium.source-url
+pasteboardItems : 1
+  [A types-only] item[0] (5):
+    [0] public.html
+    [1] public.utf8-plain-text
+    [2] org.chromium.internal.source-rfh-token
+    [3] org.chromium.web-custom-data
+    [4] org.chromium.source-url
+changeCount after types-only inspection: 297
+  [B with-data] item[0] (5):
+    [0] public.html  bytes=61  utf8:<meta charset='utf-8'><!-- obsidian --><p>LOCALONLY-GAMMA</p>
+    [1] public.utf8-plain-text  bytes=15  utf8:LOCALONLY-GAMMA
+    [2] org.chromium.internal.source-rfh-token  bytes=24  hex:14000000040000005c867fa8a0c01a3d317a76f8f4000d6b
+    [3] org.chromium.web-custom-data  bytes=76  hex:48000000010000000d00000074006500780074002f006d00610072006b0064006f0077006e0000000f0000004c004f00430041004c004f004e004c0059002d00470041004d004d0041000000
+    [4] org.chromium.source-url  bytes=28  utf8:app://obsidian.md/index.html
+changeCount after data reads: 297
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:22:42.308Z
+changeCount     : 298   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 2):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+pasteboardItems : 1
+  [A types-only] item[0] (1):
+    [0] public.utf8-plain-text
+changeCount after types-only inspection: 298
+  [B with-data] item[0] (1):
+    [0] public.utf8-plain-text  bytes=16  utf8:HOSTONLY-EPSILON
+changeCount after data reads: 298
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:23:48.798Z
+changeCount     : 299   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 2):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+pasteboardItems : 1
+  [A types-only] item[0] (1):
+    [0] public.utf8-plain-text
+changeCount after types-only inspection: 299
+  [B with-data] item[0] (1):
+    [0] public.utf8-plain-text  bytes=11  utf8:NORMAL-ZETA
+changeCount after data reads: 299
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:24:15.674Z
+changeCount     : 300   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 2):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+pasteboardItems : 1
+  [A types-only] item[0] (1):
+    [0] public.utf8-plain-text
+changeCount after types-only inspection: 300
+  [B with-data] item[0] (1):
+    [0] public.utf8-plain-text  bytes=14  utf8:HOSTONLY-THETA
+changeCount after data reads: 300
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:25:05.176Z
+changeCount     : 301   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 2):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+pasteboardItems : 1
+  [A types-only] item[0] (1):
+    [0] public.utf8-plain-text
+changeCount after types-only inspection: 301
+  [B with-data] item[0] (1):
+    [0] public.utf8-plain-text  bytes=9  utf8:BAIT-IOTA
+changeCount after data reads: 301
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:25:05.596Z
+changeCount     : 302   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 2):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+pasteboardItems : 1
+  [A types-only] item[0] (1):
+    [0] public.utf8-plain-text
+changeCount after types-only inspection: 302
+  [B with-data] item[0] (1):
+    [0] public.utf8-plain-text  bytes=14  utf8:HOSTONLY-KAPPA
+changeCount after data reads: 302
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===
+
+=== CHANGE ===
+time            : 2026-09-11T13:25:47.906Z
+changeCount     : 303   (delta 1)
+pasteboard.name : Apple CFPasteboard general
+pb.types (union, 2):
+  [0] public.utf8-plain-text
+  [1] NSStringPboardType
+pasteboardItems : 1
+  [A types-only] item[0] (1):
+    [0] public.utf8-plain-text
+changeCount after types-only inspection: 303
+  [B with-data] item[0] (1):
+    [0] public.utf8-plain-text  bytes=11  utf8:HOSTONLY-MU
+changeCount after data reads: 303
+marker probe (explicit reads, independent of the type list):
+  (types above not listed = absent)
+provenance surface:
+    NSPasteboard has no public source/owner/origin property (checked at compile time).
+    accessBehavior : 2
+=== end CHANGE ===

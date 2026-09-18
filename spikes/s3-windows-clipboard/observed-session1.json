@@ -1,0 +1,195 @@
+{
+ "probe": "s3-windows-clipboard",
+ "target": "windows-pc",
+ "timestampUtc": "2026-09-11T14:21:51.4284675+00:00",
+ "environment": {
+  "machine": "windows-pc",
+  "processId": 5812,
+  "osDescription": "Microsoft Windows 10.0.26200",
+  "is64BitProcess": true,
+  "userInteractive": true,
+  "sessionInfo": {
+   "processSessionId": 1,
+   "activeConsoleSessionId": 1,
+   "isInActiveConsoleSession": true
+  }
+ },
+ "checks": [
+  {
+   "Name": "native_roundtrip_fidelity",
+   "Status": "PASS",
+   "Data": {
+    "method": "OpenClipboard/GetClipboardData/SetClipboardData with retry",
+    "inputs": [
+     {
+      "input": "plain ascii",
+      "beforeRead": true,
+      "writeStatus": true,
+      "writeErrorCode": 0,
+      "writeMs": 0,
+      "roundTrip": true,
+      "utf8ByteMatch": true,
+      "readBackSampleHex": "70 6C 61 69 6E 20 61 73 63 69 69"
+     },
+     {
+      "input": "emoji: \ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66",
+      "beforeRead": true,
+      "writeStatus": true,
+      "writeErrorCode": 0,
+      "writeMs": 0,
+      "roundTrip": true,
+      "utf8ByteMatch": true,
+      "readBackSampleHex": "65 6D 6F 6A 69 3A 20 F0 9F 91 A8 E2 80 8D F0 9F 91 A9 E2 80 8D F0 9F 91"
+     },
+     {
+      "input": "cjk: \u6f22\u5b57\u304b\u306a\u30ab\u30ca\ud83d\ude00",
+      "beforeRead": true,
+      "writeStatus": true,
+      "writeErrorCode": 0,
+      "writeMs": 0,
+      "roundTrip": true,
+      "utf8ByteMatch": true,
+      "readBackSampleHex": "63 6A 6B 3A 20 E6 BC A2 E5 AD 97 E3 81 8B E3 81 AA E3 82 AB E3 83 8A F0"
+     },
+     {
+      "input": "combining: e\u0301",
+      "beforeRead": true,
+      "writeStatus": true,
+      "writeErrorCode": 0,
+      "writeMs": 0,
+      "roundTrip": true,
+      "utf8ByteMatch": true,
+      "readBackSampleHex": "63 6F 6D 62 69 6E 69 6E 67 3A 20 65 CC 81"
+     },
+     {
+      "input": "crlf: line1\r\nline2\r\n",
+      "beforeRead": true,
+      "writeStatus": true,
+      "writeErrorCode": 0,
+      "writeMs": 0,
+      "roundTrip": true,
+      "utf8ByteMatch": true,
+      "readBackSampleHex": "63 72 6C 66 3A 20 6C 69 6E 65 31 0D 0A 6C 69 6E 65 32 0D 0A"
+     },
+     {
+      "input": "lf: line1\nline2\n",
+      "beforeRead": true,
+      "writeStatus": true,
+      "writeErrorCode": 0,
+      "writeMs": 0,
+      "roundTrip": true,
+      "utf8ByteMatch": true,
+      "readBackSampleHex": "6C 66 3A 20 6C 69 6E 65 31 0A 6C 69 6E 65 32 0A"
+     }
+    ]
+   }
+  },
+  {
+   "Name": "powershell_roundtrip_fidelity",
+   "Status": "FAIL",
+   "Data": {
+    "method": "powershell.exe stdin UTF-8 + System.Windows.Forms.Clipboard.SetText",
+    "inputs": [
+     {
+      "input": "plain ascii",
+      "powershellExitCode": 0,
+      "powershellExitError": "#< CLIXML\r\n<Objs Version=\"1.1.0.1\" xmlns=\"http://schemas.microsoft.com/powershell/2004/04\"><Obj S=\"progress\" RefId=\"0\"><TN RefId=\"0\"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N=\"SourceId\">1</I64><PR N=\"Record\"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>",
+      "powershellStatus": true,
+      "roundTrip": true,
+      "utf8ByteMatch": true,
+      "readBackSampleHex": "70 6C 61 69 6E 20 61 73 63 69 69"
+     },
+     {
+      "input": "emoji: \ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66",
+      "powershellExitCode": 0,
+      "powershellExitError": "#< CLIXML\r\n<Objs Version=\"1.1.0.1\" xmlns=\"http://schemas.microsoft.com/powershell/2004/04\"><Obj S=\"progress\" RefId=\"0\"><TN RefId=\"0\"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N=\"SourceId\">1</I64><PR N=\"Record\"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>",
+      "powershellStatus": true,
+      "roundTrip": false,
+      "utf8ByteMatch": false,
+      "readBackSampleHex": "65 6D 6F 6A 69 3A 20 3F 3F 3F 3F 3F 3F 3F 3F 3F 3F 3F"
+     },
+     {
+      "input": "cjk: \u6f22\u5b57\u304b\u306a\u30ab\u30ca\ud83d\ude00",
+      "powershellExitCode": 0,
+      "powershellExitError": "#< CLIXML\r\n<Objs Version=\"1.1.0.1\" xmlns=\"http://schemas.microsoft.com/powershell/2004/04\"><Obj S=\"progress\" RefId=\"0\"><TN RefId=\"0\"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N=\"SourceId\">1</I64><PR N=\"Record\"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>",
+      "powershellStatus": true,
+      "roundTrip": false,
+      "utf8ByteMatch": false,
+      "readBackSampleHex": "63 6A 6B 3A 20 3F 3F 3F 3F 3F 3F 3F 3F"
+     },
+     {
+      "input": "combining: e\u0301",
+      "powershellExitCode": 0,
+      "powershellExitError": "#< CLIXML\r\n<Objs Version=\"1.1.0.1\" xmlns=\"http://schemas.microsoft.com/powershell/2004/04\"><Obj S=\"progress\" RefId=\"0\"><TN RefId=\"0\"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N=\"SourceId\">1</I64><PR N=\"Record\"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>",
+      "powershellStatus": true,
+      "roundTrip": false,
+      "utf8ByteMatch": false,
+      "readBackSampleHex": "63 6F 6D 62 69 6E 69 6E 67 3A 20 65 C2 B4"
+     },
+     {
+      "input": "crlf: line1\r\nline2\r\n",
+      "powershellExitCode": 0,
+      "powershellExitError": "#< CLIXML\r\n<Objs Version=\"1.1.0.1\" xmlns=\"http://schemas.microsoft.com/powershell/2004/04\"><Obj S=\"progress\" RefId=\"0\"><TN RefId=\"0\"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N=\"SourceId\">1</I64><PR N=\"Record\"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>",
+      "powershellStatus": true,
+      "roundTrip": true,
+      "utf8ByteMatch": true,
+      "readBackSampleHex": "63 72 6C 66 3A 20 6C 69 6E 65 31 0D 0A 6C 69 6E 65 32 0D 0A"
+     },
+     {
+      "input": "lf: line1\nline2\n",
+      "powershellExitCode": 0,
+      "powershellExitError": "#< CLIXML\r\n<Objs Version=\"1.1.0.1\" xmlns=\"http://schemas.microsoft.com/powershell/2004/04\"><Obj S=\"progress\" RefId=\"0\"><TN RefId=\"0\"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N=\"SourceId\">1</I64><PR N=\"Record\"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>",
+      "powershellStatus": true,
+      "roundTrip": true,
+      "utf8ByteMatch": true,
+      "readBackSampleHex": "6C 66 3A 20 6C 69 6E 65 31 0A 6C 69 6E 65 32 0A"
+     }
+    ]
+   }
+  },
+  {
+   "Name": "contention_retry_behavior",
+   "Status": "PASS",
+   "Data": {
+    "method": "other thread keeps OpenClipboard open while contender writes",
+    "holderOpen": true,
+    "writeStatus": true,
+    "writeErrorCode": 0,
+    "writeMs": 0,
+    "overallElapsedMs": 0,
+    "backoffBaseMs": 100,
+    "retryCount": 8,
+    "resultAfterReleaseMatches": true
+   }
+  },
+  {
+   "Name": "sequence_number_change_detection",
+   "Status": "PASS",
+   "Data": {
+    "before": 534,
+    "afterFirstWrite": 539,
+    "afterSecondWrite": 544,
+    "delta1": 5,
+    "delta2": 5,
+    "write1Ok": true,
+    "write2Ok": true,
+    "write1ErrorCode": 0,
+    "write2ErrorCode": 0,
+    "readBackExists": true
+   }
+  },
+  {
+   "Name": "interactive_session_required",
+   "Status": "PASS",
+   "Data": {
+    "session": {
+     "processSessionId": 1,
+     "activeConsoleSessionId": 1,
+     "isInActiveConsoleSession": true
+    },
+    "method": "ProcessIdToSessionId vs WTSGetActiveConsoleSessionId",
+    "note": "If processSessionId != activeConsoleSessionId, user expects a logged-in interactive session is not active for this process."
+   }
+  }
+ ]
+}

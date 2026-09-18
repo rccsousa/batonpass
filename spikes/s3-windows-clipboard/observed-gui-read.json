@@ -1,0 +1,21 @@
+{
+ "probe": "s3-clipboard-dump",
+ "timestampUtc": "2026-09-11T14:45:02.3196390Z",
+ "readOk": true,
+ "charCount": 11,
+ "utf8ByteCount": 24,
+ "text": "😊すばらしいcafé",
+ "utf8Hex": "F0 9F 98 8A E3 81 99 E3 81 B0 E3 82 89 E3 81 97 E3 81 84 63 61 66 C3 A9",
+ "codepoints": [
+  "U+1F60A",
+  "U+3059",
+  "U+3070",
+  "U+3089",
+  "U+3057",
+  "U+3044",
+  "U+0063",
+  "U+0061",
+  "U+0066",
+  "U+00E9"
+ ]
+}

@@ -1,0 +1,35 @@
+.DS_Store
+*.log
+scratch/
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Elixir
+_build/
+deps/
+*.ez
+*.beam
+/cover/
+erl_crash.dump
+.elixir_ls/
+
+# Swift / Xcode
+DerivedData/
+*.xcuserstate
+.swiftpm/
+
+# .NET
+bin/
+obj/
+
+# Key material — never commit
+*.key
+*.pem
+group.key
+
+# Xcode user state
+**/xcuserdata/
+**/project.xcworkspace/xcshareddata/swiftpm/configuration/
