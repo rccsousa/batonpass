@@ -323,7 +323,17 @@ results come from T1/T2.
 better endpoint; it lost Stage 1 to time-to-MVP.
 
 ### T13 — Android client
-**Owner:** Spark scaffolds · Testing only, same code path as T11.
+
+Foreground-only MVP in `agents/android`; uses the existing online-only relay,
+not the deferred T11 fetch path.
+
+- [x] Native enrollment and Android Keystore-protected device-local state
+- [x] Explicit clipboard/text send and `ACTION_SEND` share target
+- [x] Receive to clipboard while the activity is focused
+- [x] Existing envelope vectors, Phoenix framing, replay persistence, clock recovery
+- [x] Gradle build, JVM tests, Android instrumentation suite, setup documentation
+- [ ] Physical-device Tailscale enrollment and desktop interoperability smoke test
+- [ ] Background receiving (outside the foreground MVP)
 
 ---
 

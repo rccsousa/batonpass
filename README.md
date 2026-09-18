@@ -2,7 +2,7 @@
 
 # BatonPass
 
-**An end-to-end encrypted clipboard bridge for iPhone, macOS, and Windows.**
+**An end-to-end encrypted clipboard bridge for iPhone, Android, macOS, and Windows.**
 
 Copy a TOTP code, API key, or short piece of text on one device and paste it on
 another. The relay moves opaque ciphertext, holds no key, and stores nothing.
@@ -23,6 +23,7 @@ the relay host.
 ```mermaid
 flowchart LR
     I["iPhone<br/>Back Tap + Shortcut"] -->|encrypted envelope| R
+    A["Android<br/>foreground app + Share"] <-->|encrypted envelopes| R
     M["macOS<br/>LaunchAgent"] <-->|encrypted envelopes| R
     W["Windows<br/>interactive logon task"] <-->|encrypted envelopes| R
     R["Phoenix relay<br/>no key · no database · no history"]
@@ -61,6 +62,7 @@ in [`relay/CONTRACT.md`](relay/CONTRACT.md).
 | macOS agent | Implemented and verified end to end over the tailnet |
 | Windows agent | Implemented; 52 tests and live receive-to-clipboard verification |
 | iOS sender | Builds for simulator and device; physical-device validation pending |
+| Android client | Foreground send/receive and share target; physical-device tailnet validation pending |
 | Enrollment UI / iOS receive | Not implemented |
 
 See [`TASKS.md`](TASKS.md) for the detailed implementation record and remaining
@@ -211,7 +213,26 @@ key. In Shortcuts, create:
 Assign the shortcut under **Settings → Accessibility → Touch → Back Tap**.
 The iOS path is send-only and still awaits physical-device reliability testing.
 
-### 5. Check the path
+### 5. Build the Android client
+
+Install JDK 17 and Android SDK Platform 35, then:
+
+```sh
+cd agents/android
+./gradlew :app:testDebugUnitTest :app:assembleDebug
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+```
+
+Connect Tailscale on the phone and add its `Node.StableID` to the relay allowlist.
+Open **Enrollment / relay settings** and enter the relay's Tailscale IPv4 and port,
+the group, a unique sender ID, the current epoch, and the group key imported out
+of band. Tap **Send clipboard**, or share text to BatonPass and confirm the send.
+
+Keep the app open and focused to receive. Android does not provide ordinary apps
+with desktop-style background clipboard reads, and this MVP closes its connection
+when backgrounded. See [Android setup, security, and testing](agents/android/README.md).
+
+### 6. Check the path
 
 With both desktop sessions logged in, copy a short unique value on one desktop
 and paste it on the other. For iPhone, copy the value and invoke the Back Tap
